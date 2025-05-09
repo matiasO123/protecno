@@ -1,0 +1,48 @@
+﻿@model Protecno.Models.Reparacion
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Reparacion</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fechaAlta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fechaAlta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fechaFinalizacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fechaFinalizacion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.estadoReparacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.estadoReparacion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Producto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Producto.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

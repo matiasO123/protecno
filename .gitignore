@@ -1,0 +1,14 @@
+# Archivos de IDE
+.vs/
+*.user
+*.suo
+
+# Resultados de compilación
+bin/
+obj/
+
+# Archivos de usuario
+appsettings.Development.json
+
+# Paquetes NuGet
+*.nupkg
