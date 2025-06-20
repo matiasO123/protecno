@@ -1,0 +1,57 @@
+## Archivos generados por el IDE y compilación ##
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.suo
+*.userprefs
+*.cache
+*.swp
+*.swo
+*.pidb
+*.ncb
+*.log
+*.DS_Store
+
+## Archivos de salida y publicaciones ##
+/publish/
+*.exe
+*.dll
+*.pdb
+*.xml
+*.cache
+*.ilk
+*.exp
+*.lib
+*.dll.config
+*.exe.config
+
+## Rider/ReSharper ##
+*.sln.iml
+*.DotSettings
+_ReSharper.*/
+
+## VS Code ##
+.history/
+*.code-workspace
+
+## Azure Functions ##
+local.settings.json
+
+## MSTest ##
+TestResults/
+*.trx
+*.coverage
+
+## Otros ##
+*.bak
+*.tmp
+*.~*
+*.msi
+*.msix
+*.msm
+*.msp
+*.pyc
+*.pyo
+*.pyd

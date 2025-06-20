@@ -1,21 +1,44 @@
 using System.Diagnostics;
+using AspNetCoreGeneratedDocument;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Protecno.Models;
+using Protecno.Services;
 
 namespace Protecno.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AppDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, AppDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        [HttpPost]
+        public IActionResult Home(string username, string password)
         {
-            return View();
+            UsuarioService usuarioService = new UsuarioService(_context);
+            if (usuarioService.EsUsuario(username, password)) return View("Index2");
+
+            return PhysicalFile(
+                Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "html", "login.html"),
+                "text/html"
+            );
+        }
+        public IActionResult Reportes()
+        {
+            return View("Reportes");
+        }
+        public IActionResult Login()
+        {
+            return PhysicalFile(
+                Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "html", "login.html"),
+                "text/html"
+            );
         }
 
         public IActionResult Privacy()

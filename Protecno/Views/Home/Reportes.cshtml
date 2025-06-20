@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Menú Principal";
+}
+
+<style>
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+        gap: 20px;
+        max-width: 800px;
+        margin: 40px auto;
+    }
+
+    .menu-item {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 40px 20px;
+        text-align: center;
+        color: #212529;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 180px;
+    }
+
+        .menu-item:hover {
+            background-color: #e9ecef;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .menu-item i {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: #495057;
+        }
+
+        .menu-item h3 {
+            margin: 0;
+            font-size: 1.4rem;
+        }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4 mb-5">Reportes</h1>
+
+    <div class="menu-grid">
+        <!-- Rectángulo 1: Clientes -->
+        <a asp-controller="Clientes" asp-action="Index" class="menu-item">
+            <i class="bi bi-people-fill"></i>
+            <h3>Clientes</h3>
+        </a>
+
+        <!-- Rectángulo 2: Productos -->
+        <a asp-controller="Productos" asp-action="Index" class="menu-item">
+            <i class="bi bi-box-seam"></i>
+            <h3>Productos</h3>
+        </a>
+
+        <!-- Rectángulo 3: Facturas -->
+        <a asp-controller="Facturas" asp-action="Index" class="menu-item">
+            <i class="bi bi-receipt"></i>
+            <h3>Facturas</h3>
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+}

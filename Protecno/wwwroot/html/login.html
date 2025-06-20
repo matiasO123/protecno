@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PROTECNO - Inicio de Sesión</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="logo.png" alt="Logo de Protecno" class="logo" />
+      <div class="titulo">
+        <h1>PROTECNO</h1>
+        <p>Gestión de Servicios Técnicos</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form action="Home/Home" method="post">
+            <input type="text" name="username" placeholder="Nombre de usuario" required />
+            <input type="password" name="password" placeholder="Contraseña" required />
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  
+  <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Servicio Técnico ProTecno. Todos los derechos reservados.</p>
+        <nav class="footer-nav">          
+          <a href="#">Contacto</a>
+          <a href="#">Términos</a>
+          <a href="#">Privacidad</a>
+        </nav>
+      </div>
+  </footer>
+</body>
+</html>

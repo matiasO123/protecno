@@ -1,0 +1,150 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  width: 75%;
+  height: auto;
+}
+
+header {
+  background-color: #d3d3d3;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* distribuye logo y título */
+  position: relative;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  position: absolute;
+  left: 40px;
+}
+
+.titulo {
+  margin: 0 auto; /* centra horizontalmente */
+  text-align: center;
+}
+
+.titulo h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.titulo p {
+  margin: 0;
+  font-size: 16px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: start; /* en vez de center */
+  height: 75vh;
+  padding-top: 5vh;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px;
+  font-size: 14px;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 4px; 
+}
+
+button {
+  padding: 12px;
+  background-color: #2f3c7e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 40px 0;
+}
+
+button:hover {
+  background-color: #1e2c5a;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-password a {
+  font-size: 14px;
+  color: #2f3c7e;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  padding: 20px 40px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: #bbbbbb;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #ffffff;
+}
+
