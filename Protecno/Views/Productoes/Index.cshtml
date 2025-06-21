@@ -6,11 +6,18 @@
 
 <h1>Index</h1>
 
-<p>
+<!--<p>
     <a asp-action="Create">Create New</a>
-    <p>Creando producto para el cliente: <strong>@ViewBag.Clientenombre</strong></p>
-
-</p>
+    <p>Creando producto para el cliente: <strong>@ViewBag.Clientenombre</strong></p>-->
+@if (Model.Any() && Model.First().cliente != null)
+{
+    <p>Creando producto para el cliente: <strong>@Model.First().cliente.nombre</strong></p>
+}
+else
+{
+    <p>Debe especificar cliente.</p>
+}
+<!--</p>-->
 <table class="table">
     <thead>
         <tr>
