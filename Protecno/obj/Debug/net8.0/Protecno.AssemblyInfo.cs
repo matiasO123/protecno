@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Protecno")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4789d410361f40f1f100e59c3249c097ca3d642d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba66e957e5f59ea0b1be750e03018add23ad1278")]
 [assembly: System.Reflection.AssemblyProductAttribute("Protecno")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Protecno")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
