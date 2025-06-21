@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Onna\\Source\\Repos\\protecno\\Protecno\\Protecno.csproj": {}
+    "C:\\Users\\Onna\\source\\repos\\protecno\\Protecno\\Protecno.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Onna\\Source\\Repos\\protecno\\Protecno\\Protecno.csproj": {
+    "C:\\Users\\Onna\\source\\repos\\protecno\\Protecno\\Protecno.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Onna\\Source\\Repos\\protecno\\Protecno\\Protecno.csproj",
+        "projectUniqueName": "C:\\Users\\Onna\\source\\repos\\protecno\\Protecno\\Protecno.csproj",
         "projectName": "Protecno",
-        "projectPath": "C:\\Users\\Onna\\Source\\Repos\\protecno\\Protecno\\Protecno.csproj",
+        "projectPath": "C:\\Users\\Onna\\source\\repos\\protecno\\Protecno\\Protecno.csproj",
         "packagesPath": "C:\\Users\\Onna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Onna\\Source\\Repos\\protecno\\Protecno\\obj\\",
+        "outputPath": "C:\\Users\\Onna\\source\\repos\\protecno\\Protecno\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,13 +44,24 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -70,6 +81,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.7, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.9.0, )"
             }
           },
           "imports": [
@@ -91,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.314/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

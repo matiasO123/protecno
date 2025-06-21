@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Protecno.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Protecno.Controllers
 {
@@ -43,7 +44,7 @@ namespace Protecno.Controllers
         }
 
         // GET: Productoes/Create
-        public IActionResult Create()
+        /*public IActionResult Create()
         {
             return View();
         }
@@ -61,6 +62,36 @@ namespace Protecno.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            return View(producto);
+        }*/
+        public IActionResult Create(int? clienteId)
+        {
+            if (clienteId == null)
+            {
+                TempData["Error"] = "Debe seleccionar un cliente antes de crear un producto.";
+                return RedirectToAction("Index", "Clientes");
+            }
+
+            ViewBag.clienteId = clienteId;
+            return View(new Producto { clienteId = clienteId.Value });
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,nombre,marca,modelo,aniofabricacion,estado,clienteId")] Producto producto)
+        {
+            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            {
+                Console.WriteLine(error.ErrorMessage); 
+            }
+
+            if (ModelState.IsValid)
+            {
+                _context.Add(producto);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewBag.clienteId = producto.clienteId;
             return View(producto);
         }
 

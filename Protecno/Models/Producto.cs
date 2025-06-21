@@ -1,4 +1,6 @@
-﻿namespace Protecno.Models
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
+namespace Protecno.Models
 {
     public class Producto
     {
@@ -8,6 +10,9 @@
         public string modelo { get; set; }
         public DateTime aniofabricacion { get; set; }
         public string estado { get; set; }
+        [ValidateNever]
         public Cliente cliente { get; set; }
+        public int clienteId{ get; set; }
+
     }
 }
