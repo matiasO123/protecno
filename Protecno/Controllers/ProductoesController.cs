@@ -20,9 +20,10 @@ namespace Protecno.Controllers
         }
 
         // GET: Productoes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id = 0)
         {
-            return View(await _context.productos.ToListAsync());
+            if(id == 0) return View(await _context.productos.ToListAsync());
+            else return View(await _context.productos.Where(p=> p.clienteId == id).ToListAsync());
         }
 
         // GET: Productoes/Details/5
@@ -111,9 +112,6 @@ namespace Protecno.Controllers
             return View(producto);
         }
 
-        // POST: Productoes/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,nombre,marca,modelo,aniofabricacion,estado")] Producto producto)
@@ -127,7 +125,20 @@ namespace Protecno.Controllers
             {
                 try
                 {
-                    _context.Update(producto);
+                    var productoExistente = await _context.productos.FindAsync(id);
+                    if (productoExistente == null)
+                    {
+                        return NotFound();
+                    }
+
+                    // Solo actualizás las propiedades permitidas
+                    productoExistente.nombre = producto.nombre;
+                    productoExistente.marca = producto.marca;
+                    productoExistente.modelo = producto.modelo;
+                    productoExistente.aniofabricacion = producto.aniofabricacion;
+                    productoExistente.estado = producto.estado;
+
+                    // No tocás clienteId ni otras propiedades que no se deben modificar
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

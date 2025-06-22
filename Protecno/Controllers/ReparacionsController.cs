@@ -19,10 +19,19 @@ namespace Protecno.Controllers
         }
 
         // GET: Reparacions
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id = 0)
         {
-            var appDbContext = _context.reparacions.Include(r => r.Producto);
-            return View(await appDbContext.ToListAsync());
+            if (id == 0)
+            {
+                var appDbContext = _context.reparacions.Include(r => r.Producto);
+                return View(await appDbContext.ToListAsync());
+            }
+            else
+            {
+                var appDbContext = _context.reparacions.Where(r => r.productoID == id).Include(r => r.Producto);
+                return View(await appDbContext.ToListAsync());
+            }
+
         }
 
         // GET: Reparacions/Details/5
