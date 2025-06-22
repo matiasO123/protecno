@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Protecno.Models;
 
 namespace Protecno.Controllers
@@ -53,8 +54,11 @@ namespace Protecno.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,detalle,nroFactura")] Factura factura)
+        public async Task<IActionResult> Create([Bind("Id,pagoId,detalle,nroFactura")] Factura factura)
         {
+            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            { Console.WriteLine(error.ErrorMessage); 
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(factura);
