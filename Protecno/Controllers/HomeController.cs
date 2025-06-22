@@ -1,7 +1,7 @@
 using System.Diagnostics;
-using AspNetCoreGeneratedDocument;
+//using AspNetCoreGeneratedDocument;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+//using Microsoft.EntityFrameworkCore;
 using Protecno.Models;
 using Protecno.Services;
 
@@ -29,6 +29,13 @@ namespace Protecno.Controllers
                 "text/html"
             );
         }
+
+        [HttpGet]
+        public IActionResult Home_sin_auth()
+        {
+            return View("Index2");
+        }
+
         public IActionResult Reportes()
         {
             return View("Reportes");
